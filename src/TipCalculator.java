@@ -1,4 +1,4 @@
-
+//imported libraries
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
@@ -8,7 +8,7 @@ public class TipCalculator {
         Scanner scan = new Scanner(System.in);
 
         DecimalFormat formatter = new DecimalFormat("#.##");
-
+//Dialogue in order to establish the numbers and greet the customer
         System.out.println("Welcome Customer.");
 
         System.out.print("How many people are in your group? ");
@@ -21,7 +21,9 @@ public class TipCalculator {
         double number = scan.nextDouble();
 
         double totalCost = 0;
-
+       
+        
+        //allows the user to enter the amount they have to pay
         while (number != -1) {
             totalCost += number;
             System.out.print("Enter a cost in dollars and cents, e.g. 12.50 (-1 to end): ");
@@ -29,7 +31,7 @@ public class TipCalculator {
 
         }
 
-
+// creates the doubles and the formatted variables for use
         double tipAmount = totalCost *  (tipPercent / 100.0);
         String formattedTip = formatter.format(tipAmount);
 
@@ -47,6 +49,7 @@ public class TipCalculator {
         double perPersonTotal = ((totalCost + tipAmount) / numPeople);
         String CostPerPerson = formatter.format(perPersonTotal);
 
+//prints all of the information that is required
         System.out.println("------------------------------------------------");
         System.out.println("Total Bill Before Tip: $" + totalCosting);
         System.out.println("Tip Percentage: " + tipPercent + "%");
